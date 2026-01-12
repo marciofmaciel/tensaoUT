@@ -1,0 +1,14 @@
+{
+    // Ativa o ambiente virtual automaticamente ao abrir o terminal
+    "terminal.integrated.profiles.windows": {
+        "PowerShell com .venv": {
+            "path": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+            "args": [
+                "-NoExit",
+                "-Command",
+                "& 'f:/2026/Tensao_Residual_UT/.venv/Scripts/auto_activate.ps1'"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell com .venv"
+}
