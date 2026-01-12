@@ -422,9 +422,11 @@ vmax_percentil = st.sidebar.slider("Percentil máximo colormap", 50, 100, 99)
 # ÁREA PRINCIPAL - UPLOAD E PROCESSAMENTO
 # ============================================================================
 
+
 st.header("📂 Carregamento de Dados")
 
-tab1, tab2 = st.tabs(["Upload de Arquivo", "Dados Sintéticos de Teste"])
+# Adiciona uma aba para o README
+tab1, tab2, tab3 = st.tabs(["Upload de Arquivo", "Dados Sintéticos de Teste", "README"])
 
 with tab1:
     st.markdown("""
@@ -457,6 +459,14 @@ with tab1:
 
 with tab2:
     st.markdown("**Gerar dataset sintético para testar a interface**")
+
+with tab3:
+    try:
+        with open("readme.md", encoding="utf-8") as f:
+            readme_content = f.read()
+        st.markdown(readme_content, unsafe_allow_html=True)
+    except Exception as e:
+        st.error(f"Não foi possível carregar o README: {e}")
     
     col1, col2, col3 = st.columns(3)
     with col1:
